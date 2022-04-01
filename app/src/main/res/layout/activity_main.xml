@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/teal_700"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:tint="@color/white"
+         android:src="@drawable/ic_baseline_arrow_back_24"
+        />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="Tracking No"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/drop_shadow"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#90F2F2F2"
+        app:layout_constraintBottom_toTopOf="@id/viewDivider"
+        app:layout_constraintTop_toBottomOf="@id/layoutToolbar"/>
+
+
+    <TextView
+        android:id="@+id/estimatedTime"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/orderNumber"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Estimated Time"
+        android:gravity="center"
+        android:textColor="@color/textSecondary"
+        android:textSize="15sp"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/layoutToolbar"/>
+
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:text="Order Number"
+        android:textAllCaps="true"
+        android:textColor="@color/textSecondary"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutToolbar"
+        app:layout_constraintStart_toEndOf="@id/estimatedTime"/>
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        app:layout_constraintEnd_toEndOf="@id/estimatedTime"
+        app:layout_constraintStart_toStartOf="@id/estimatedTime"
+        app:layout_constraintTop_toBottomOf="@id/estimatedTime"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="30 MINUTES"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textColor="@color/textPrimary"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/orderNoVal"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="RX172246006DE"
+        android:textColor="@color/textPrimary"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/orderNumber"
+        app:layout_constraintStart_toStartOf="@id/orderNumber"
+        app:layout_constraintTop_toBottomOf="@id/orderNumber"/>
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#E9E9E9"
+        app:layout_constraintTop_toBottomOf="@id/time"
+        android:layout_marginTop="15dp"/>
+
+    <View
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:id="@+id/viewPickUp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/shape_status_remaining"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imagePickUpLoc"
+        app:layout_constraintBottom_toBottomOf="@id/imagePickUpLoc"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/viewPickUp"
+        app:layout_constraintTop_toBottomOf="@id/viewDivider"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/imagePickUpLoc"
+        android:src="@drawable/ic_baseline_navigation_24"
+
+        />
+
+<!--    <ImageView-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:id="@+id/imagePickUpLoc"-->
+<!--        android:src="@drawable/placeholder_1"-->
+<!--        app:layout_constraintStart_toEndOf="@id/viewPickUp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/viewDivider"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="40dp"/>-->
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:id="@+id/viewSupporter"
+        app:layout_constraintBottom_toBottomOf="@id/imagePickUpLoc"
+        app:layout_constraintEnd_toEndOf="@id/imagePickUpLoc"
+        app:layout_constraintStart_toStartOf="@id/imagePickUpLoc"
+        app:layout_constraintTop_toTopOf="@id/imagePickUpLoc"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:text="Pick up location"
+        android:layout_height="wrap_content"
+        android:id="@+id/pickUpText"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imagePickUpLoc"/>
+
+    <TextView
+        android:id="@+id/pickUpTextValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description of pick up location"
+        app:layout_constraintStart_toStartOf="@id/pickUpText"
+        app:layout_constraintEnd_toEndOf="@id/pickUpText"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter"
+        android:textColor="@color/textSecondary"
+        android:textSize="15sp"/>
+
+
+    <View
+        android:id="@+id/viewDropOff"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/shape_status_remaining"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="@id/imageDropOffLoc"
+        app:layout_constraintBottom_toBottomOf="@id/imageDropOffLoc"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/viewDropOff"
+        app:layout_constraintTop_toBottomOf="@id/imagePickUpLoc"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/imageDropOffLoc"
+        android:src="@drawable/ic_baseline_navigation_24"
+
+        />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:id="@+id/viewSupporter2"
+        app:layout_constraintBottom_toBottomOf="@id/imageDropOffLoc"
+        app:layout_constraintEnd_toEndOf="@id/imageDropOffLoc"
+        app:layout_constraintStart_toStartOf="@id/imageDropOffLoc"
+        app:layout_constraintTop_toTopOf="@id/imageDropOffLoc"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:text="Drop off location"
+        android:layout_height="wrap_content"
+        android:id="@+id/dropOffText"
+        android:textStyle="bold"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageDropOffLoc"/>
+
+    <TextView
+        android:id="@+id/dropOffTextValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description of drop off location"
+        app:layout_constraintStart_toStartOf="@id/dropOffText"
+        app:layout_constraintEnd_toEndOf="@id/dropOffText"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter2"
+        android:textColor="@color/textSecondary"
+        android:textSize="15sp"/>
+
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="#757575"
+        app:layout_constraintTop_toBottomOf="@id/viewPickUp"
+        app:layout_constraintEnd_toEndOf="@id/viewPickUp"
+        app:layout_constraintStart_toStartOf="@id/viewPickUp"
+        app:layout_constraintBottom_toTopOf="@id/viewDropOff"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
